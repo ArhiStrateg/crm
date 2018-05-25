@@ -1,0 +1,48 @@
+<div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="submit" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Итоговые данные по прибыли проекта</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group" style="white-space: normal; text-align: center">
+                <span>
+                    {% if view_for == "1" or view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_1.html' %}
+                        </div>
+                    {% endif %}
+                    {% if view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_2.html' %}
+                        </div>
+                    {% endif %}
+                    {% if view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_3.html' %}
+                        </div>
+                    {% endif %}
+                    {% if view_for == "4" or view_for == "5" or view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_4.html' %}
+                        </div>
+                    {% endif %}
+                    {% if view_for == "5" or view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_5.html' %}
+                        </div>
+                    {% endif %}
+                    {% if view_for == "6" %}
+                        <div class="row" style="padding: 10px;">
+                            {% include 'projects/bill_stat_6.html' %}
+                        </div>
+                    {% endif %}
+
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

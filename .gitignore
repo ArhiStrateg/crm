@@ -1,0 +1,18 @@
+# Python binary
+*.pyc
+__pycache__
+
+# IDE files
+.idea
+
+# Virtual environment
+venv
+
+# Databases
+*.sqlite3
+
+# Media
+media
+
+# Local environment
+local_settings.py

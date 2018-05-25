@@ -1,0 +1,2401 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Страница проекта
+{% endblock title %}
+
+{% block content %}
+
+	<div class="col-lg-offset-0 col-lg-12">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Проекты</li>
+			</ol>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12" style="text-align: center; margin-bottom: 10px; background: #ffffff">
+                <span style="font-size: 150%">
+                    <strong>Основная информация о ведущем проекте и подпроектах</strong><br>
+                </span>
+                <span style="font-size: 120%">
+                    Наименование проекта:
+                    <strong>{{ prime.prime_project.name_project }}</strong>
+                </span>
+
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                #}
+                <div class="col-md-12 col-xs-12">
+                    <div style="font-size: 100%; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px;" align="center">
+                        {% if prime.prime_project.status_1 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                    Оплата
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Оплата поставщику
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Готовность поставки
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на транзитный склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на наш склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка заказчику
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if prime.prime_project.status_2 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                    Оплата поставщику
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Готовность поставки
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на транзитный склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на наш склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка заказчику
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if prime.prime_project.status_3 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата поставщику
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                    Готовность поставки
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на транзитный склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на наш склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка заказчику
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if prime.prime_project.status_4 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата поставщику
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Готовность поставки
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на транзитный склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на наш склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка заказчику
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if prime.prime_project.status_5 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Оплата поставщику
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Готовность поставки
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на транзитный склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка на наш склад
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                    Отгрузка заказчику
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if prime.prime_project.status_6 == True %}
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-default" data-toggle="modal" data-target="#result_ststus_1" style="width: 100%;">Оплата</button>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-default" data-toggle="modal" data-target="#result_ststus_2" style="width: 100%;">Оплата поставщику</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-default" data-toggle="modal" data-target="#result_ststus_3" style="width: 100%;">Готовность поставки</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-default" data-toggle="modal" data-target="#result_ststus_4" style="width: 100%;">Отгрузка на транзитный склад</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-default" data-toggle="modal" data-target="#result_ststus_5" style="width: 100%;">Отгрузка на наш склад</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="padding: 10px;">
+                                <div style="width: 100%; white-space: normal; height: 30px; display: flex; justify-content: center; align-items: center;">
+                                    <button type="button" class="btn-success" data-toggle="modal" data-target="#result_ststus_6" style="width: 100%;">Отгрузка заказчику</button>
+                                </div>
+                            </div>
+                        {% endif %}
+
+
+
+
+                        <form method="POST">{% csrf_token %}
+                            <div>
+                                <input type="checkbox" name="all_complite" value="true">
+                                <span style="font-size: 80%; color: #30a5ff">Все подэтапы данной стадии проекта закрыты</span><Br>
+                                <button class="btn-primary" type="submit" name="next_stady" value="{{ prime.prime_project.id }}">
+                                    Перевод проекта на следующий этап
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+        {% include 'projects/all_mod_for_mini_bill.html' %}
+
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div style="height: 100%;">
+						<span style="width: 100%;">
+                            <strong style="font-size: 120%">
+                                Основные данные
+                            </strong>
+
+                        </span>
+                    </div>
+					<div style="padding: 5px; height: 535px;">
+
+                        <div style="margin: 5px; text-align: left; padding-left: 30px; padding-right: 30px;">
+
+                            <div class="col-sm-4">
+                                <form method="POST">{% csrf_token %}
+                                    <div>
+                                        <button class="btn-primary" style="width: 100%;" type="submit" name="upd_project" value="{{ prime.prime_project.id }}">
+                                            Изменить
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <a href="{% url 'create_new_subproject' prime.prime_project.id %}">
+                                    <button class="btn-primary" type="button" style="width: 100%;" href="{% url 'create_new_subproject' prime.prime_project.id %}">
+                                        Создать подпроект
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <form method="POST">{% csrf_token %}
+                                    <div>
+                                        <button class="btn-danger" style="width: 100%;" type="submit" name="del_project" value="{{ prime.prime_project.id }}">
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <div class="col-lg-12" style="margin-top: 15px;">
+                                <div style="overflow: auto; white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7; height: 100px;">
+
+                                    <span style="font-size: 80%;">Описание проекта:<br>
+                                        <strong style="font-size: 150%">{{ prime.prime_project.description_project }}</strong>
+                                    </span>
+                                    </br>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7">
+                                            <span style="font-size: 80%">Создатель проекта:<br>
+                                                <strong style="font-size: 150%"> {{ prime.prime_project.who_create_project.surname }} {{ prime.prime_project.who_create_project.name }} {{ prime.prime_project.who_create_project.last_name }}</strong>
+                                            </span>
+                                            </br>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7;">
+                                            <span style="font-size: 80%">Руководитель проекта:<br>
+                                                <strong style="font-size: 150%"> {{ prime.who_boss_project.surname }} {{ prime.who_boss_project.name }} {{ prime.who_boss_project.last_name }}</strong>
+                                            </span>
+                                            </br>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" style="margin-top: 10px;">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7">
+                                            <span style="font-size: 80%">Статус:<br>
+                                                {% if prime.prime_project.status_1 == True %}
+                                                    <strong style="font-size: 150%"> Оплата</strong>
+                                                {% endif %}
+                                                {% if prime.prime_project.status_2 == True %}
+                                                    <strong style="font-size: 150%"> Оплата поставщику</strong>
+                                                {% endif %}
+                                                {% if prime.prime_project.status_3 == True %}
+                                                    <strong style="font-size: 150%"> Готовность поставки</strong>
+                                                {% endif %}
+                                                {% if prime.prime_project.status_4 == True %}
+                                                    <strong style="font-size: 150%"> Отгрузка на транзитный склад</strong>
+                                                {% endif %}
+                                                {% if prime.prime_project.status_5 == True %}
+                                                    <strong style="font-size: 150%"> Отгрузка на наш склад</strong>
+                                                {% endif %}
+                                                {% if prime.prime_project.status_6 == True %}
+                                                    <strong style="font-size: 150%"> Отгрузка заказчику</strong>
+                                                {% endif %}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" style="margin-top: 10px;">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7">
+                                            <span style="font-size: 80%">Дата создания проекта:<br>
+                                                <strong style="font-size: 150%"> {{ prime.date_create_project }}</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7">
+                                            <span style="font-size: 80%">Дата начала проекта:<br>
+                                                <strong style="font-size: 150%"> {{ prime.date_start_project }}</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div style="white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7">
+                                            <span style="font-size: 80%">Дата дедлайна проекта:<br>
+                                                <strong style="font-size: 150%"> {{ prime.date_deadline_project }}</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row">
+
+                                    <div class="col-lg-12">
+                                        <div style="overflow: auto; white-space: normal; text-align: center; margin: 3px; padding: 5px; background: #f1f4f7; height: 368px;">
+
+                                            <span style="font-size: 80%;">Контактные данные:<br>
+                                                <button type="button" class="btn-primary" style="width: 80%">Добавить компанию</button>
+                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                                {% for contact in list_contacts %}
+                                                        <div class="btn-group" style="margin-bottom: 5px;">
+                                                                <button type="button" class="btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                                    {{ contact.contact.name_company }}<br>
+                                                                    {{ contact.contact.phone_company }}
+                                                                </button>
+                                                                <ul class="dropdown-menu" role="menu" style="width: 100%">
+                                                                    <li>
+                                                                        <p style="text-align: center; font-size: 80%;">
+                                                                            <span style="color: #30a5ff">Адрес компании:<br></span>
+                                                                            {{ contact.contact.location_company }}<br>
+                                                                            <span style="color: #30a5ff">Сайт компании:<br></span>
+                                                                            {{ contact.contact.site_company }}<br>
+                                                                            <span style="color: #30a5ff">E-mail компании:<br></span>
+                                                                            {{ contact.contact.mail_company }}<br>
+                                                                            <div class="row" style="margin: 0px;">
+                                                                                <div class="col-md-12">
+                                                                                    <button style="width: 100%; margin-bottom: 5px;" type="button" class="btn-primary">Изменить</button>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <button style="width: 100%;" type="button" class="btn-danger">Удалить</button>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                        <hr style="border-top: 1px solid #30a5ff; margin-top: 0px; margin-bottom: 5px; margin-left: 40px; margin-right: 40px;">
+
+                                                        <strong style="color: #30a5ff">Сотрудники компании:</strong><br>
+                                                        <button style="margin-bottom: 5px" type="button" class="btn-primary">Добавить сотрудника</button>
+                                                        <hr style="border-top: 1px solid #30a5ff; margin-top: 0px; margin-bottom: 5px; margin-left: 40px; margin-right: 40px;">
+
+                                                        {% for people in contact.data_contacts %}
+
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                                    {{ people.doljnost }}<br>
+                                                                    {{ people.fio_client }}
+                                                                </button>
+                                                                <ul class="dropdown-menu" role="menu" style="width: 100%">
+                                                                    <li>
+                                                                        <p style="text-align: center; font-size: 80%;">
+                                                                            <span style="color: #30a5ff">Контактный телефон сотрудника:<br></span>
+                                                                            {{ people.phone_client }}<br>
+                                                                            <span style="color: #30a5ff">E-mail сотрудника:<br></span>
+                                                                            {{ people.mail_client }}<br>
+
+                                                                            <div class="row" style="margin: 0px;">
+                                                                                <div class="col-md-12">
+                                                                                    <button style="width: 100%; margin-bottom: 5px;" type="button" class="btn-primary">Изменить</button>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <button style="width: 100%;" type="button" class="btn-danger">Удалить</button>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        {% endfor %}
+
+                                                {% endfor %}
+                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+
+                                            </span>
+                                            </br>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+{#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+        <div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="height: 100%;">
+						<span class="clickable panel-toggle panel-button-tab-left" style="width: 100%;">
+                            <em class="fa fa-toggle-up">
+                            <strong style="font-size: 120%">
+                                Файлы
+                            </strong>
+                        </em>
+                    </span>
+                </div>
+                <div class="panel-body timeline-container" style="overflow: auto; height: 477px;">
+
+                    <div class="col-lg-12" style="text-align: left; padding-left: 30px; padding-right: 30px;">
+                        <button type="button" class="btn-primary" data-toggle="modal" data-target="#new_file" style="width: 100%">
+                            Пркрепить файл
+                        </button>
+                    </div>
+
+                    <div class="row" style="padding: 20px;">
+
+                        <div class="modal fade" id="new_file" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <form method="POST">{% csrf_token %}
+                                            <button type="submit" class="close" name="rebot" value="need_reboote">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </form>
+                                        <h4 class="modal-title" id="myModalLabel">Прикрепление файла к проекту</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                                            <div class="panel-footer">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div>
+                                                            <div>
+                                                                <textarea name="description_file" id="id_description_file_for_project" style="width: 100%;"></textarea>
+                                                            </div>
+                                                            <div>
+                                                                <input type="file" class="btn btn-primary btn-md" name="files_for_project" value="{{ request.POST.file_for_project }}">
+                                                            </div>
+                                                            <div>
+                                                                <button class="btn btn-primary btn-md" type="submit" id="btn-chat" value="send_file_for_project">Отправить</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% for file_for_project in list_for_file_project %}
+                            Наименование фала - {{ file_for_project.name }}<br>
+                            Описание фала - {{ file_for_project.description_file }}<br>
+                            Прикрепил файл - {{ file_for_project.who_create.surname }} {{ file_for_project.who_create.name }} {{ file_for_project.who_create.last_name }}<br>
+                            Дата создания - {{ file_for_project.date_create }}<br>
+                            <a href="{% url 'login' %}media/{{ file_for_project.for_way }}" target="_blank" download>Скачать прикрепленный файл</a>
+                            <br>
+                            <button type="button" class="btn-primary" data-toggle="modal" data-target="#reload_file_id_{{ file_for_project.id }}">Изменить файл проекта</button>
+
+                            <div class="modal fade" id="reload_file_id_{{ file_for_project.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <form method="POST">{% csrf_token %}
+                                                <button type="submit" class="close" name="rebot" value="need_reboote">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </form>
+                                            <h4 class="modal-title" id="myModalLabel">Прикрепление файла к проекту</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                                                <div class="panel-footer">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div>
+                                                                <div>
+                                                                    <textarea name="reload_description_file_id_{{ file_for_project.id }}" id="id_description_file_for_project_{{ file_for_project.id }}" style="width: 100%;">{{ file_for_project.description_file }}</textarea>
+                                                                </div>
+                                                                <div>
+                                                                    Первоначальный файл - {{ file_for_project.name }}<br>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="file" class="btn btn-primary btn-md" name="reload_files_for_project" value="{{ request.POST.file_for_project }}">
+                                                                </div>
+                                                                <div>
+                                                                    <button class="btn btn-primary btn-md" type="submit" id="btn-chat" value="reload_file_for_project">Изменить</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form method="POST">{% csrf_token %}
+                                <button class="btn-primary" style="width: 100%;" type="submit" name="del_file_main_project" value="{{ file_for_project.id }}">Удаление файла</button>
+                            </form>
+                            <hr>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+{#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+{#			<div class="col-md-12">#}
+{#				<div class="panel panel-default">#}
+{#					<div class="panel-heading" style="padding: 0px; height: 100%;">#}
+{#						<span class="pull-right clickable panel-toggle panel-button-tab-left"#}
+{#                              style="width: 100%; margin: 0px">#}
+{#                            <em class="fa fa-toggle-up">#}
+{#                                <strong style="font-size: 120%">#}
+{#                                    Прикрепленные файлы проекта#}
+{#                                </strong>#}
+{#                            </em>#}
+{#                        </span>#}
+{#                    </div>#}
+{#					<div class="panel-body timeline-container">#}
+{##}
+{##}
+{##}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="height: 100%;">
+						<span class="clickable panel-toggle panel-button-tab-left" style="width: 100%;">
+                            <em class="fa fa-toggle-up">
+                            <strong style="font-size: 120%">
+                                    Показатели
+                                </strong>
+                            </em>
+                        </span>
+                    </div>
+					<div class="row panel-body timeline-container">
+
+                        <div class="col-md-12" style="height: 100%; font-size: 100%;
+                        padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px; background: #ffffff;"
+                        align="center">
+
+                            <div style="white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7">
+                                <div class="progress-labels">
+                                    <div>
+                                        <span style="font-size: 80%">
+                                            <strong>Показатель дедлайна</strong>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 80%; text-align: right;">{{ proc_ras }}%</span>
+                                    </div>
+                                </div>
+                                <div class="progress" style="margin-bottom: 5px;">
+                                    <div data-percentage="0%" style="width: {{ proc_ras }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7">
+                                <div class="progress-labels">
+                                    <div>
+                                        <span style="font-size: 80%">
+                                            <strong>Показатель прибыльности</strong>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 80%; text-align: right;">{{ result_proc }}%</span>
+                                    </div>
+                                </div>
+
+                                {% if result_proc_dict.znac == "+" %}
+                                    <div class="progress" style="margin-bottom: 5px;">
+                                        <div data-percentage="0%" style="width: {{ result_proc_dict.res }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                {% endif %}
+
+                                {% if result_proc_dict.znac == "-" %}
+                                    <div class="progress" style="margin-bottom: 5px;">
+                                        <div data-percentage="0%" style="width: {{ result_proc_dict.res }}%;" class="progress-bar progress-bar-red" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="row" style="width: 100%; height: 100%; padding-top: 10px">
+
+                                <div class="col-lg-12" style="white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7">
+                                    <span style="font-size: 80%">Итоговый доход проекта:<br>
+                                        <strong style="font-size: 120%">
+                                            {{ sum_incom }} грн.
+                                        </strong>
+                                        <br>
+                                        <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_ibil" >Полный отчет</button>
+                                        <button type="submit" class="btn-primary" onclick="location.href = '{% url "finacial" project_id %}'" >Преход на страницу отчета</button>
+                                    </span>
+                                </div>
+
+                                <div class="modal fade" id="modal_for_ibil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <form method="POST">{% csrf_token %}
+                                                    <button type="submit" class="close" name="rebot" value="need_reboote">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </form>
+                                                <h4 class="modal-title" id="myModalLabel">Итоговые данные по доходам подпроекта</h4>
+                                            </div>
+
+                                            {% if view_for == "1" or view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Оплата</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_1 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_1 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Оплата поставщику</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_2 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_2 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Готовность поставки</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_3 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_3 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Отгрузка на транзитный склад</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_4 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_4 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Отгрузка на наш склад</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_5 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_5 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+
+                                            {% if view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Отгрузка заказчику</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_incom in list_for_incom_status_6 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_create.surname }} {{ data_incom.who_create.name }}<br>
+                                                                            {{ data_incom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.who_update.surname }} {{ data_incom.who_update.name }}<br>
+                                                                            {{ data_incom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_incom.incom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ incom_summ_status_6 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                Сумма дохода по всем статусам проекта - <strong style="color: red">{{ sum_incom }}</strong> грн.
+                                            </h4>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12" style="white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7">
+                                    <span style="font-size: 80%">Итоговый расход проекта:<br>
+                                        <strong style="font-size: 120%">
+                                            {{ sum_outcom }} грн.
+                                        </strong>
+                                        <br>
+                                        <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_obil">Полный отчет</button>
+                                        <button type="submit" class="btn-primary" onclick="location.href = '{% url "finaciar" project_id %}'" >Преход на страницу отчета</button>
+
+                                    </span>
+                                </div>
+
+                                <div class="modal fade" id="modal_for_obil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <form method="POST">{% csrf_token %}
+                                                    <button type="submit" class="close" name="rebot" value="need_reboote">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </form>
+                                                <h4 class="modal-title" id="myModalLabel">Итоговые данные по расходам подпроекта</h4>
+                                            </div>
+
+                                            {% if view_for == "1" or view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Оплата</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_outcom in list_for_outcom_status_1 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                            {{ data_outcom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                            {{ data_outcom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.outcom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_1 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Оплата поставщику</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_outcom in list_for_outcom_status_2 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                            {{ data_outcom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                            {{ data_outcom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.outcom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_2 }}</strong> грн.
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                                            <div class="modal-body">
+                                                <h4 class="modal-title">
+                                                    Статус проекта - <strong>Готовность поставки</strong>
+                                                </h4>
+                                                <div class="form-group" style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 80%">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="padding: 0px">
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата создания
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто создал
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Описание
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Дата изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Кто вносил изменения
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Сумма, грн.
+                                                                    </strong>
+                                                                </div>
+
+                                                                <div class="col-lg-1" style="padding: 0px">
+                                                                    <strong style="font-size: 100%">
+                                                                        Подробнее
+                                                                    </strong>
+                                                                </div>
+
+                                                                {% for data_outcom in list_for_outcom_status_3 %}
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_create }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                            {{ data_outcom.who_create.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.description }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.date_update }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                            {{ data_outcom.who_update.last_name }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                        display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            {{ data_outcom.outcom_sim }}
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <form method="POST">{% csrf_token %}
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                    Подробнее
+                                                                                </button>
+                                                                            </strong>
+                                                                        </div>
+                                                                    </form>
+
+                                                                {% endfor %}
+                                                                <h4 class="modal-title" style="font-size: 120%;">
+                                                                    Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_3 }}</strong> грн.
+                                                                </h4>
+
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if view_for == "4" or view_for == "5" or view_for == "6" %}
+                                                <div class="modal-body">
+                                                    <h4 class="modal-title">
+                                                        Статус проекта - <strong>Отгрузка на транзитный склад</strong>
+                                                    </h4>
+                                                    <div class="form-group" style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 80%">
+                                                            <div class="row">
+                                                                <div class="col-lg-12" style="padding: 0px">
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата создания
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто создал
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Описание
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата изменения
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто вносил изменения
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Сумма, грн.
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Подробнее
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    {% for data_outcom in list_for_outcom_status_4 %}
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_create }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                                {{ data_outcom.who_create.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.description }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_update }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                                {{ data_outcom.who_update.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.outcom_sim }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <form method="POST">{% csrf_token %}
+                                                                            <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                                display: flex; justify-content: center; align-items: center;">
+                                                                                <strong>
+                                                                                    <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                        Подробнее
+                                                                                    </button>
+                                                                                </strong>
+                                                                            </div>
+                                                                        </form>
+                                                                    {% endfor %}
+                                                                    <h4 class="modal-title" style="font-size: 120%;">
+                                                                        Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_4 }}</strong> грн.
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+
+                                            {% if view_for == "5" or view_for == "6" %}
+                                                <div class="modal-body">
+                                                    <h4 class="modal-title">
+                                                        Статус проекта - <strong>Отгрузка на транзитный склад</strong>
+                                                    </h4>
+                                                    <div class="form-group" style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 80%">
+                                                            <div class="row">
+                                                                <div class="col-lg-12" style="padding: 0px">
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата создания
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто создал
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Описание
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата изменения
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто вносил изменения
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Сумма, грн.
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Подробнее
+                                                                        </strong>
+                                                                    </div>
+                                                                    {% for data_outcom in list_for_outcom_status_5 %}
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_create }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                                {{ data_outcom.who_create.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.description }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_update }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                                {{ data_outcom.who_update.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.outcom_sim }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <form method="POST">{% csrf_token %}
+                                                                            <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                                display: flex; justify-content: center; align-items: center;">
+                                                                                <strong>
+                                                                                    <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                        Подробнее
+                                                                                    </button>
+                                                                                </strong>
+                                                                            </div>
+                                                                        </form>
+                                                                    {% endfor %}
+                                                                    <h4 class="modal-title" style="font-size: 120%;">
+                                                                        Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_5 }}</strong> грн.
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if view_for == "6" %}
+                                                <div class="modal-body">
+                                                    <h4 class="modal-title">
+                                                        Статус проекта - <strong>Отгрузка на транзитный склад</strong>
+                                                    </h4>
+                                                    <div class="form-group" style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 80%">
+                                                            <div class="row">
+                                                                <div class="col-lg-12" style="padding: 0px">
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата создания
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто создал
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Описание
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Дата изменения
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-2" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Кто вносил изменения
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Сумма, грн.
+                                                                        </strong>
+                                                                    </div>
+
+                                                                    <div class="col-lg-1" style="padding: 0px">
+                                                                        <strong style="font-size: 100%">
+                                                                            Подробнее
+                                                                        </strong>
+                                                                    </div>
+                                                                    {% for data_outcom in list_for_outcom_status_6 %}
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_create }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                                                                {{ data_outcom.who_create.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.description }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.date_update }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                                                                {{ data_outcom.who_update.last_name }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                            display: flex; justify-content: center; align-items: center;">
+                                                                            <strong>
+                                                                                {{ data_outcom.outcom_sim }}
+                                                                            </strong>
+                                                                        </div>
+                                                                        <form method="POST">{% csrf_token %}
+                                                                            <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                                                                display: flex; justify-content: center; align-items: center;">
+                                                                                <strong>
+                                                                                    <button class="btn-primary" style="width: 100%;" type="submit" name="sub_project_go" value="{{ data_incom.id_sub_project }}">
+                                                                                        Подробнее
+                                                                                    </button>
+                                                                                </strong>
+                                                                            </div>
+                                                                        </form>
+                                                                    {% endfor %}
+                                                                    <h4 class="modal-title" style="font-size: 120%;">
+                                                                        Итоговая сумма расхода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_6 }}</strong> грн.
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            <h4 class="modal-title">
+                                                Сумма дохода по всем статусам проекта - <strong style="color: red">{{ sum_outcom }}</strong> грн.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" style="white-space: normal; text-align: center; margin: 3px; padding: 10px; background: #f1f4f7">
+                                    <span style="font-size: 80%">Итоговая прибыль проекта:<br>
+                                        <strong style="font-size: 120%">
+                                            {{ prib }} грн.
+                                        </strong>
+                                        <br>
+                                        <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_bbil">Полный отчет</button>
+                                    </span>
+                                </div>
+                                <div class="modal fade" id="modal_for_bbil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    {% include 'projects/prj_mod.html' %}
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+
+                        <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px; padding: 0px;">
+                            <div style="margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+                                <div style="text-align: center; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                    <span style="font-size: 150%">
+                                        <strong>Чат</strong><br>
+                                    </span>
+                                </div>
+                                <div style="padding-bottom: 3px; background: #ffffff; margin-bottom: 5px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                    <div class="panel panel-default chat" style="margin-bottom: 0px;">
+                                        <div class="panel-body">
+                                            <ul>
+                                                {% for for_mesage in list_for_mesage %}
+                                                    {% if  for_mesage.i_true == True %}
+                                                        <li class="left clearfix" style="margin-bottom: 0px; padding-bottom: 10px; padding-top: 0px; border-bottom-width: 0px;">
+                                                            <div class="col-lg-offset-6 col-lg-6">
+                                                                <div class="header">
+                                                                    <div class="row" style="padding-left: 10px; padding-right: 10px; background: #ffffff; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <div class="col-lg-12" style="text-align: center; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                            <div class="col-lg-4" style="text-align: left">
+                                                                                <span style="font-size: 80%; color: #30a5ff;">
+                                                                                    Отправил:
+                                                                                </span>
+                                                                                <strong class="primary-font">
+                                                                                    <span style="font-size: 80%;">Я ({{ for_mesage.name.surname }}&nbsp;{{ for_mesage.name.name }}&nbsp;{{ for_mesage.name.last_name }})</span><br>
+                                                                                </strong>
+                                                                            </div>
+                                                                            <div class="col-lg-offset-4 col-lg-4" style="text-align: right;">
+                                                                                <div>
+                                                                                    <span style="font-size: 80%;">
+                                                                                        <span style="color: #30a5ff;">Дата:</span>
+                                                                                        <strong>&nbsp;{{ for_mesage.data }}</strong>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                                                                        </div>
+                                                                        <div class="col-lg-12" style="text-align: left; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 5px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                            <p style="margin: 5px; font-size: 80%; color: #30a5ff;">Текст сообщения:&nbsp;</p>
+                                                                            <p style="margin: 5px;"><strong>{{ for_mesage.text }}</strong></p>
+                                                                        </div>
+
+                                                                        {% if for_mesage.view_file == True %}
+                                                                            <div class="col-lg-12">
+                                                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                                                                            </div>
+                                                                            <div class="col-lg-12" style="text-align: left; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 5px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <div style="text-align: center;">
+                                                                                    <div class="col-lg-12">
+                                                                                        <span style="color: #30a5ff; font-size: 80%;">
+                                                                                            <span>Прикрепленные файлы:&nbsp;</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    {% for file in for_mesage.files_for_view %}
+                                                                                        <div class="col-lg-6" style="padding: 5px;">
+                                                                                            <div style="padding: 3px; background: #ffffff; box-shadow: 0 0 1px 1px #00000014; min-height: 68px;">
+                                                                                                <p style="font-size: 80%; min-height: 30px;">{{ file.name }}</p>
+                                                                                                <a class="btn-primary" href="{% url 'login' %}media/file_atach_comment/{{ file.name }}" target="_blank" download style="font-size: 80%;">
+                                                                                                    <button class="btn-primary">
+                                                                                                        Скачать
+                                                                                                    </button>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    {% endfor %}
+                                                                                </div>
+                                                                            </div>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="left clearfix" style="margin-bottom: 0px; padding-bottom: 10px; padding-top: 0px; border-bottom-width: 0px;">
+                                                            <div class="col-lg-6">
+                                                                <div class="header">
+                                                                    <div class="row" style="padding-left: 10px; padding-right: 10px; background: #ffffff; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <div class="col-lg-12" style="text-align: center; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                            <div class="col-lg-4" style="text-align: left">
+                                                                                <span style="font-size: 80%; color: #30a5ff;">
+                                                                                    Отправил:
+                                                                                </span>
+                                                                                <strong class="primary-font">
+                                                                                    <span style="font-size: 80%;">{{ for_mesage.name.surname }}&nbsp;{{ for_mesage.name.name }}&nbsp;{{ for_mesage.name.last_name }}</span><br>
+                                                                                </strong>
+                                                                            </div>
+                                                                            <div class="col-lg-offset-4 col-lg-4" style="text-align: right;">
+                                                                                <div>
+                                                                                    <span style="font-size: 80%;">
+                                                                                        <span style="color: #30a5ff;">Дата:</span>
+                                                                                        <strong>&nbsp;{{ for_mesage.data }}</strong>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                                                                        </div>
+                                                                        <div class="col-lg-12" style="text-align: left; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 5px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                            <p style="margin: 5px; font-size: 80%; color: #30a5ff;">Текст сообщения:&nbsp;</p>
+                                                                            <p style="margin: 5px;"><strong>{{ for_mesage.text }}</strong></p>
+                                                                        </div>
+
+                                                                        {% if for_mesage.view_file == True %}
+                                                                            <div class="col-lg-12">
+                                                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                                                                            </div>
+                                                                            <div class="col-lg-12" style="text-align: left; padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 5px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <div style="text-align: center;">
+                                                                                    <div class="col-lg-12">
+                                                                                        <span style="color: #30a5ff; font-size: 80%;">
+                                                                                            <span>Прикрепленные файлы:&nbsp;</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    {% for file in for_mesage.files_for_view %}
+                                                                                        <div class="col-lg-6" style="padding: 5px;">
+                                                                                            <div style="padding: 3px; background: #ffffff; box-shadow: 0 0 1px 1px #00000014; min-height: 68px;">
+                                                                                                <p style="font-size: 80%; min-height: 30px;">{{ file.name }}</p>
+                                                                                                <a class="btn-primary" href="{% url 'login' %}media/file_atach_comment/{{ file.name }}" target="_blank" download style="font-size: 80%;">
+                                                                                                    <button class="btn-primary">
+                                                                                                        Скачать
+                                                                                                    </button>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    {% endfor %}
+                                                                                </div>
+                                                                            </div>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                                            <div class="panel-footer" style="padding-bottom: 0px; padding-top: 0px;">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-9" style="padding-left: 0px; padding-right: 0px;">
+                                                                <div style="padding: 15px;">
+                                                                    <input id="btn-input" type="text" name="text_comment_for_project" class="form-control input-md" value="{{ request.POST.text_comment_for_project }}"
+                                                                           style="border-radius: 0px;" placeholder="Напишите сообщение тут ..." />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3" style="padding: 15px; text-align: center;">
+                                                                <div class="col-lg-12" style="box-shadow: 0 0 1px 1px #00000014; height: 45px;">
+                                                                    <div style="font-size: 80%;">
+                                                                        <div class="row" style="text-align: center;">
+                                                                            <div class="col-lg-9" style="text-align: center; display: flex; justify-content: center; align-items: center; height: 45px;">
+                                                                                <button class="btn-primary">
+                                                                                    <input type="file" class="btn-primary" multiple name="files_for_comment_for_project" value="{{ request.POST.files_for_comment_for_project }}">
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-lg-3" style="padding: 0px; display: flex; justify-content: center; align-items: center; height: 45px;">
+                                                                                <button class="btn-primary" type="submit" id="btn-chat" value="send_comment_for_project">Отправить</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px; padding: 0px;">
+                            <div style="text-align: center; margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+                                <div style="padding-bottom: 3px; background: #f7f7f7; margin-bottom: 5px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                    <span style="font-size: 150%">
+                                        <strong>Список вложенных подпроектов</strong><br>
+                                    </span>
+                                    <div style="font-size: 80%; margin-bottom: 5px;">
+                                        <button type="button" class="btn-primary" data-toggle="modal" data-target="#create_new_subproject">Создание нового подпроекта</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                                </div>
+                                <div class="col-lg-12" style="padding: 5px; background: #ffffff; margin-bottom: 8px; margin-top: 5px; box-shadow: 0 0 1px 1px #00000014;">
+                                    <div class="col-lg-12" style="margin: 0px; padding: 0px;">
+                                        {% for sub in result_summ_sub %}
+                                            {% include 'projects/sub_project_mini.html' %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+{% include 'projects/mod_create_subproject.html' %}
+
+{% for sub in result_summ_sub %}
+    {% include 'projects/mod_create_subproject_low.html' %}
+{% endfor %}
+
+ {% for sub in result_summ_sub %}
+    {% include 'projects/mod_reload_subproject.html' %}
+    {% include 'projects/mod_del_subproject.html' %}
+    {% include 'projects/mod_done_subproject.html' %}
+{% endfor %}
+
+
+{% endblock content %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+        $('.btn-group').on('click', '.dropdown-menu > li > div  > div  > div > div > div ', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    </script>
+
+{% endblock scripts %}

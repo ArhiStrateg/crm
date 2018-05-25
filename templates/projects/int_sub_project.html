@@ -1,0 +1,600 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Подпроект (подробно)
+{% endblock title %}
+
+{% block content %}
+
+	<div class="col-lg-offset-0 col-lg-12">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Подпроект (подробно)</li>
+			</ol>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12" style="text-align: center">
+				<h1 class="page-header">Информация о ведущем подпроекте и вложенных подпроектах</h1>
+			</div>
+		</div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="text-align: center;">
+                        Основная информация о ведущем подпроекте
+                    </div>
+
+                    {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                    <div class="panel-body" style="padding-top: 5px; padding-bottom: 5px;">
+                        <div class="parent" style="text-align: right; white-space: normal;">
+                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 10px; background: #f1f4f7;">
+                                <div style="width: 100%; padding: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px; margin-left: 5px;">
+                                    <div class="row" style="padding-right: 15px; padding-left: 15px;">
+                                        <div class="col-md-12" style="background: #ffffff;">
+                                            <div class="col-md-6" style="font-size: 100%; height: 100%;
+                                            padding-left: 0px;padding-right: 0px; background: #ffffff;">
+
+                                                <div style="margin: 5px; text-align: left; padding-left: 30px; padding-right: 30px;">
+
+                                                    <div style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 100%">Наименование подпроекта:
+                                                            <strong>{{ sub_project.local_key.local_key.name_project }}</strong>
+                                                        </span>
+                                                        </br>
+                                                    </div>
+                                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                                    <div style="white-space: normal;">
+                                                        <span style="font-size: 80%">Описание проекта:
+                                                            <strong>{{ sub_project.local_key.local_key.description_project }}</strong>
+                                                        </span>
+                                                        </br>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Создатель проекта:
+                                                            <strong> {{ sub_project.local_key.local_key.who_create_project.surname }} {{ sub_project.local_key.local_key.who_create_project.name }} {{ sub_project.local_key.local_key.who_create_project.last_name }}</strong>
+                                                        </span>
+                                                        </br>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Руководитель проекта:
+                                                            <strong> {{ sub_project.local_key.who_boss_project.surname }} {{ sub_project.local_key.who_boss_project.name }} {{ sub_project.local_key.who_boss_project.last_name }}</strong>
+                                                        </span>
+                                                        </br>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Статус:
+                                                            <strong> Реализация</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Дата создания проекта:
+                                                            <strong> {{ sub_project.local_key.date_create_project }}</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Дата начала проекта:
+                                                            <strong> {{ sub_project.local_key.date_start_project }}</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%">Дата дедлайна проекта:
+                                                            <strong> {{ sub_project.local_key.date_deadline_project }}</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                                <div class="row" style="width: 100%; height: 100%; padding-top: 10px; padding-top: 25px;">
+                                                    <div class="col-sm-4">
+                                                        <form method="POST">{% csrf_token %}
+                                                            <div>
+                                                                <button class="btn-primary" style="width: 100%;" type="submit" name="upd_sub_project_main" value="{{ sub_project.local_key.local_key.id }}">
+                                                                    Изменить
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <a href="{% url 'create_new_subproject' sub_project.local_key.local_key.prime_project.id %}">
+                                                            <button class="btn-primary" type="button" style="width: 100%;" href="{% url 'create_new_subproject' sub_project.local_key.local_key.prime_project.id %}">
+                                                                Создать подпроект
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <form method="POST">{% csrf_token %}
+                                                            <div>
+                                                                <button class="btn-danger" style="width: 100%;" type="submit" name="del_sub_project_main" value="{{ sub_project.local_key.local_key.id }}">
+                                                                    Удалить
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6" style="height: 100%; font-size: 100%;
+                                            padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px; background: #ffffff;"
+                                            align="center">
+
+                                                <div style="white-space: normal; text-align: center">
+                                                    <span style="font-size: 100%"><strong>Динамические показатели проекта</strong></span>
+                                                    </br>
+                                                </div>
+                                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                                <div style="margin: 5px;">
+                                                    <div class="progress-labels">
+                                                        <div>
+                                                            <span style="font-size: 80%">
+                                                                <strong>Показатель дедлайна</strong>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span style="font-size: 80%; text-align: right;">{{ proc_ras }}%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress" style="margin-bottom: 5px;">
+                                                        <div data-percentage="0%" style="width: {{ proc_ras }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div style="margin: 5px;">
+                                                    <div class="progress-labels">
+                                                        <div>
+                                                            <span style="font-size: 80%">
+                                                                <strong>Показатель прибыльности</strong>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span style="font-size: 80%; text-align: right;">{{ result_proc }}%</span>
+                                                        </div>
+                                                    </div>
+
+                                                    {% if result_proc_dict.znac == "+" %}
+                                                        <div class="progress" style="margin-bottom: 5px;">
+                                                            <div data-percentage="0%" style="width: {{ result_proc_dict.res }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    {% endif %}
+
+                                                    {% if result_proc_dict.znac == "-" %}
+                                                        <div class="progress" style="margin-bottom: 5px;">
+                                                            <div data-percentage="0%" style="width: {{ result_proc_dict.res }}%;" class="progress-bar progress-bar-red" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    {% endif %}
+
+                                                </div>
+
+                                                <hr style="margin-bottom: 5px;">
+
+                                                <div class="row">
+
+                                                    <div class="col-lg-4" style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 80%">Итоговая прибыль подпроекта:<br>
+                                                            <strong style="font-size: 120%">
+                                                                {{ prib }} грн.
+                                                            </strong>
+                                                            <br>
+                                                            <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_bil">Полный отчет</button>
+                                                        </span>
+                                                    </div>
+
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+<div class="modal fade" id="modal_for_bil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="col-lg-offset-1 col-lg-10 modal-dialog" role="document" style="width: 100%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Итоговые данные по доходам и расходам подпроекта</h4>
+      </div>
+      <div class="modal-body">
+{#        +++++++++++++++++++++++++++#}
+
+            <div class="form-group" style="white-space: normal; text-align: center">
+                <span style="font-size: 80%">
+                    <div class="row">
+                        <div class="col-lg-12" style="padding: 0px">
+                            <div align="center" style="white-space: normal; text-align: center">
+                                <span style="font-size: 120%"><strong>Доходная финансовая часть подпроекта</strong><br><br>
+                                </span>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Дата создания
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Кто создал
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-3" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Сумма, грн.
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Описание
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Дата изменения
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Кто внес изменение
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Удаление
+                                </strong>
+                            </div>
+
+                            <form method="post">{% csrf_token %}
+                            {% for all_fin_incom in result_incom %}
+                                <div>
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_incom.date_create }}
+                                        </strong>
+                                    </div>
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_incom.who_create.surname }} {{ all_fin_incom.who_create.name }} <br>
+                                            {{ all_fin_incom.who_create.last_name }}
+                                        </strong>
+                                    </div>
+
+
+                                    <div class="col-lg-3" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <input type="text" name="cheng_incom_id_{{ all_fin_incom.id }}" value="{{ all_fin_incom.inc_sub_project }}">
+                                        </strong>
+                                    </div>
+
+
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <textarea name="cheng_incom_description_id_{{ all_fin_incom.id }}" value="{{ all_fin_incom.description }}">{{ all_fin_incom.description }}</textarea>
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_incom.date_update }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_incom.who_update.surname }} {{ all_fin_incom.who_update.name }} <br>
+                                            {{ all_fin_incom.who_update.last_name }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <input name="cheng_incom_del" value="{{ all_fin_incom.id }}" type="checkbox"/>
+                                        </strong>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+                                                        <div align="center" style="white-space: normal; text-align: center">
+                                <span style="font-size: 120%"><strong>Расходная финансовая часть подпроекта</strong><br><br>
+                                </span>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Дата создания
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Кто создал
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-3" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Сумма, грн.
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Описание
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Дата изменения
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-2" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Кто внес изменение
+                                </strong>
+                            </div>
+
+                            <div class="col-lg-1" style="padding: 0px">
+                                <strong style="font-size: 150%">
+                                    Удаление
+                                </strong>
+                            </div>
+
+                            {% for all_fin_outcom in result_outcom %}
+                                <div>
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_outcom.date_create }}
+                                        </strong>
+                                    </div>
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_outcom.who_create.surname }} {{ all_fin_outcom.who_create.name }} <br>
+                                            {{ all_fin_outcom.who_create.last_name }}
+                                        </strong>
+                                    </div>
+
+
+                                    <div class="col-lg-3" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <input type="text" name="cheng_outcom_id_{{ all_fin_outcom.id }}" value="{{ all_fin_outcom.inc_sub_project }}">
+                                        </strong>
+                                    </div>
+
+
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <textarea name="cheng_outcom_description_id_{{ all_fin_outcom.id }}" value="{{ all_fin_outcom.description }}">{{ all_fin_outcom.description }}</textarea>
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_outcom.date_update }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            {{ all_fin_outcom.who_update.surname }} {{ all_fin_outcom.who_update.name }} <br>
+                                            {{ all_fin_outcom.who_update.last_name }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; background: #d9d9d9; margin-top: 10px;
+                                    display: flex; justify-content: center; align-items: center;">
+                                        <strong>
+                                            <input name="cheng_outcom_del" value="{{ all_fin_outcom.id }}" type="checkbox"/>
+                                        </strong>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+                            <button class="btn-block btn-primary" type="submit" style="margin-top: 20px; padding: 10px;">Сохранить изменения</button>
+                            </form>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+{#        +++++++++++++++++++++++++++#}
+      </div>
+    </div>
+  </div>
+</div>
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+                                                    <div align="center" class="col-lg-4 form-group" style="white-space: normal; text-align: center">
+                                                        <span style="font-size: 80%">Итоговый доход подпроекта:<br>
+                                                            <strong> {{ sum_incom }} грн.</strong><br>
+                                                            <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_incom">Внести доход</button>
+                                                        </span>
+                                                    </div>
+
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+<div class="modal fade" id="modal_for_incom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Внесение дохода по подпроекту</h4>
+      </div>
+      <div class="modal-body">
+{#        +++++++++++++++++++++++++++#}
+        <form method="post">{% csrf_token %}
+            <div class="form-group" style="white-space: normal; text-align: center">
+                <span style="font-size: 80%">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div align="center" style="white-space: normal; text-align: center">
+                                <span style="font-size: 120%">Итоговый сумма дохода подпроекта составляет - <strong> {{ sum_incom }} грн.</strong><br><br>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            Внесите сумму дохода.
+                            <input class="form-control" name="incom_send" type="number" step="0.01" style="height: 25px; margin: 5px; width: 100%;" value="0">
+                        </div>
+                        <div class="col-lg-7">
+                            Внесите комментарий
+{#                            <input class="form-control" name="comment" type="text" style="height: 25px; margin: 5px; width: 100%;">#}
+                            <textarea name="comment" id="id_description_project" style="width: 100%;"></textarea>
+{#                            <textarea name="comment" class="form textarea"  placeholder="Оставте комментарий ..." style="width: 100%;"></textarea>#}
+{#                            <textarea class="form-control" name="incom_send_description" id="id_description_project" style="width: 100%;"></textarea>#}
+                        </div>
+                        <div class="col-lg-offset-8 col-lg-4">
+                            <button class="btn-primary" type="submit" style="margin: 20px">Внести доход</button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </form>
+{#        +++++++++++++++++++++++++++#}
+      </div>
+    </div>
+  </div>
+</div>
+
+                                                    <form method="post">{% csrf_token %}
+                                                        <div align="center" class="col-lg-4 form-group" style="white-space: normal; text-align: center">
+                                                            <span style="font-size: 80%">Итоговый расход подпроекта:<br>
+                                                                <strong> {{ sum_outcom }} грн.</strong><br>
+                                                                <button type="button" class="btn-primary" data-toggle="modal" data-target="#modal_for_outcom">Внести расход</button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+<div class="modal fade" id="modal_for_outcom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Внесение расхода по подпроекту</h4>
+      </div>
+      <div class="modal-body">
+{#        +++++++++++++++++++++++++++#}
+        <form method="post">{% csrf_token %}
+            <div class="form-group" style="white-space: normal; text-align: center">
+                <span style="font-size: 80%">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div align="center" style="white-space: normal; text-align: center">
+                                <span style="font-size: 120%">Итоговая сумма дохода подпроекта составляет - <strong> {{ sum_outcom }} грн.</strong><br><br>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            Внесите сумму дохода.
+                            <input class="form-control" name="outcom_send" type="number" step="0.01" style="height: 25px; width: 100%;margin: 5px" value="0">
+
+{#                            <input class="form-control" name="incom_send" type="number" step="0.01" style="height: 25px; margin: 5px; width: 100%;" value="0">#}
+                        </div>
+                        <div class="col-lg-7">
+                            Внесите комментарий.
+                            <textarea name="comment" id="id_description_project" style="width: 100%;"></textarea>
+{#                            <input class="form-control" name="comment" type="text" style="height: 25px; margin: 5px; width: 100%;">#}
+                        </div>
+                        <div class="col-lg-offset-8 col-lg-4">
+                            <button class="btn-primary" type="submit" style="margin: 20px">Внести расход</button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </form>
+{#        +++++++++++++++++++++++++++#}
+      </div>
+    </div>
+  </div>
+</div>
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+
+{#                                                    <form method="post">{% csrf_token %}#}
+{#                                                        <div align="center" class="col-lg-5 form-group" style="white-space: normal; text-align: center">#}
+{#                                                            <span style="font-size: 80%">Итоговый расход подпроекта:<br>#}
+{#                                                                <strong> {{ sum_outcom }} грн.</strong><br>#}
+{#                                                                <input class="form-control" name="outcom_send" type="number" step="0.01" style="height: 25px; width: 100%;margin: 5px" value="0">#}
+{#                                                                <button class="btn-primary" type="submit">Внести расход</button>#}
+{#                                                            </span>#}
+{#                                                        </div>#}
+{#                                                    </form>                                                    #}
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center; margin-top: 30px;">
+                                    Список вложенных активных подпроектов
+                                </div>
+                                <div class="panel-body">
+                                    <div class="parent" style="text-align: right; white-space: normal">
+                                        <div class="col-lg-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+
+                                            {% for sub in result_summ_sub %}
+                                                {% include 'projects/sub_project_mini.html' %}
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Создание проекта
+{% endblock title %}
+
+{% block content %}
+
+   <form method="post">{% csrf_token %}
+
+       <div class="form-group">
+           <input class="form-control" value="{{ info_for_send.name }}" type="text" name="name">
+       </div>
+
+       <div class="form-group">
+           <input class="form-control" value="{{ info_for_send.description_project }}" type="text" name="description_project">
+       </div>
+
+       <div class="form-group">
+           <input class="form-control" value="{{ info_for_send.who_boss_project }}" type="text" name="who_boss_project">
+       </div>
+
+       <div class="form-group">
+           <input class="form-control" type="date" value="{{ info_for_send.date_start_project }}" name="date_start_project">
+       </div>
+
+       <div class="form-group">
+           <input class="form-control" type="date" value="{{ info_for_send.date_deadline_project }}" name="date_deadline_project">
+{#           <input class="form-control" type="date" value="{{ info_for_send.date_deadline_project }}"  name="date_deadline_project">#}
+       </div>
+
+       <button href="#" class="btn btn-primary" type="submit">Отправить</button>
+   </form>
+
+
+{% endblock content %}
+

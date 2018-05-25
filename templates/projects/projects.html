@@ -1,0 +1,661 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Проекты
+{% endblock title %}
+
+{% block content %}
+
+	<div class="col-lg-offset-0 col-lg-12">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Проекты</li>
+			</ol>
+		</div><!--/.row-->
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Проекты</h1>
+			</div>
+		</div><!--/.row-->
+
+		<div class="panel panel-container">
+		  <div class="row">
+<div class="col-xs-12 col-md-6 col-lg-6 no-padding">
+  <div class="panel panel-orange panel-widget border-right">
+    <div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
+      <div class="large">3</div>
+      <div class="text-muted">Открытых проектов</div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-md-6 col-lg-6 no-padding">
+  <div class="panel panel-orange panel-widget border-right">
+    <div class="row no-padding"> <em class="fa fa-xl fa-comments color-orange"></em>
+      <div class="large">2</div>
+<div class="text-muted">Архивных проектов</div>
+    </div>
+  </div>
+</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center;">
+
+							Список открытых и активных проектов
+                            <a class="btn-primary" href="{% url 'create_new_project' %}" style="text-decoration: none;
+                                    text-align: center; word-wrap: break-word; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+                                <span style="font-size: 80%;">Создать новый проект</span>
+                            </a>
+
+					</div>
+					<div class="panel-body">
+						<div class="parent" style="text-align: right; white-space: normal">
+							<div class="col-lg-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+
+
+                            {% for active_project in list_all_active_project %}
+                                <div class="col-md-12" style="background: #f1f4f7; padding: 5px; margin-bottom: 20px;">
+                                    <div class="col-md-12" style="background: #ffffff; ">
+                                        <div style="display: flex; justify-content: center; align-items: center;">
+                                            <div class="col-md-4 col-xs-12" style="background: #ffffff; padding: 5px;">
+                                                <div style="white-space: normal; background: #f1f4f7; min-height: 30px;
+                                                display: flex; justify-content: center; align-items: center;" align="center">
+                                                    <span style="font-size: 80%; color: #30a5ff">Наименование проекта:</span> <strong> {{ active_project.project.prime_project.name_project }}</strong>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-12" style="background: #ffffff; padding: 5px;">
+                                                <div style="white-space: normal; background: #f1f4f7; min-height: 30px;
+                                                display: flex; justify-content: center; align-items: center;" align="center">
+                                                    <span style="font-size: 80%; color: #30a5ff">Руководитель проекта:</span> <strong> {{ active_project.project.who_boss_project.surname }} {{ active_project.project.who_boss_project.name }}</strong>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-12">
+                                                <div style="margin-top: 5px; margin-bottom: 5px; white-space: normal;" align="center">
+
+                                                    <div style="font-size: 80%;">
+                                                        <div class="row">
+                                                            <div class="col-md-4" style="background: #ffffff; padding: 5px;">
+                                                                <div style="background: #f1f4f7;">
+                                                                    <span style="color: #30a5ff">Дата создания:</span><br>
+                                                                    <strong>{{ active_project.data_cr }}</strong>
+                                                                    <strong>{{ active_project.mouth_cr }}</strong>
+                                                                    <strong>{{ active_project.year_cr }}</strong>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-md-4" style="background: #ffffff; padding: 5px;">
+                                                                <div style="background: #f1f4f7;">
+                                                                    <span style="color: #30a5ff">Дата старта:</span><br>
+                                                                    <strong>{{ active_project.data_strt }}</strong>
+                                                                    <strong>{{ active_project.mouth_strt }}</strong>
+                                                                    <strong>{{ active_project.year_strt }}</strong>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4" style="background: #ffffff; padding: 5px;">
+                                                                <div style="background: #f1f4f7;">
+                                                                    <span style="color: #30a5ff">Дата дедлайна:</span><br>
+                                                                    <strong>{{ active_project.data_dld }}</strong>
+                                                                    <strong>{{ active_project.mouth_dld }}</strong>
+                                                                    <strong>{{ active_project.year_dld }}</strong>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="row">
+                                                    <div style="font-size: 100%; background: #ffffff; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px;" align="center">
+
+
+
+                                                        {% if active_project.status_1 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if active_project.status_2 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if active_project.status_3 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if active_project.status_4 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if active_project.status_5 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #f1f4f7; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if active_project.status_6 == True %}
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Оплата поставщику
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Готовность поставки
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на транзитный склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #daf7c4; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка на наш склад
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2" style="padding: 10px;">
+                                                                <div style="width: 100%; white-space: normal; height: 30px; background: #b3f791; display: flex; justify-content: center; align-items: center;">
+                                                                    Отгрузка заказчику
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;" align="center">
+                                                <div style="margin-top: 15px; padding: 10px;">
+                                                    <a href='{% url "project" active_project.project.id %}'>
+                                                        <button class="btn-primary"
+                                                                style="width: 100%;"
+                                                                href='#'>
+                                                            Подробнее
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+                                                <div style="margin-top: 15px; padding: 10px;">
+                                                    <a href='{% url "project" active_project.project.id %}'>
+                                                        <button class="btn-primary"
+                                                                style="width: 100%;"
+                                                                href='#'>
+                                                            Изменить
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+                                                <div style="margin-top: 15px; padding: 10px;">
+                                                    <a href='{% url "project" active_project.project.id %}'>
+                                                        <button class="btn-danger"
+                                                                style="width: 100%;"
+                                                                href='#'>
+                                                            Удалить
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            {% endfor %}
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading" style="text-align: right;">
+							Список архивных и неактивных проектов
+							<span class="pull-right clickable panel-toggle panel-button-tab-left">
+							<em class="fa fa-toggle-up"></em>
+						</span>
+						</div>
+						<div class="panel-body">
+							<div class="parent" style="text-align: right; white-space: normal">
+								<div class="col-lg-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+
+									<button class="btn btn-default btn-md pull-right" data-toggle="collapse" href="#sub-item-1"
+											style="width: 100%; padding: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px; margin-left: 5px;">
+										<div class="col-md-3 col-xs-12">
+											<div style="font-size: 100%; background: #ffffff; min-height: 132px; display: flex; justify-content: center; align-items: center;" align="center">
+												<div>
+													<div style="margin-top: 5px; margin-bottom: 10px; white-space: normal;">
+														<span style="font-size: 80%">Наименование проекта:</span> <strong> Ремонт Лувра</strong>
+														</br>
+													</div>
+													<div style="white-space: normal">
+														<span style="font-size: 80%">Руководитель проекта:</span> <strong> Петров Сигизмунд</strong>
+														</br>
+														<span style="font-size: 80%">Статус:</span> <strong> Реализация</strong>
+														</br>
+														<span style="font-size: 80%">Состояние невыполненных сроков:</span> <strong> 5</strong>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-6 col-xs-12">
+											<div class="row">
+												<div style="font-size: 100%; background: #ffffff; min-height: 132px; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px;" align="center">
+													<div>
+														<div class="progress-labels">
+															<div>
+														<span style="font-size: 90%">
+															<strong>Показатель дедлайна</strong>
+														</span>
+															</div>
+															<div>
+																<span style="font-size: 90%; text-align: right;">30%</span>
+															</div>
+														</div>
+														<div class="progress" style="margin-bottom: 5px;">
+															<div data-percentage="0%" style="width: 30%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</div>
+
+													<div style="margin-top: 10px;">
+														<div class="progress-labels">
+															<div>
+														<span style="font-size: 90%">
+															<strong>Фонансовый показатель</strong>
+														</span>
+															</div>
+															<div>
+																<span style="font-size: 90%">45%</span>
+															</div>
+														</div>
+														<div class="progress" style="margin-bottom: 5px;">
+															<div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-3 col-xs-12">
+											<div class="row">
+												<div style="margin-left: 15px; margin-right: 15px;">
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Создан</strong>
+															</h4>
+															<div class="large">
+																<strong>30</strong>
+															</div>
+															<div class="text-muted">Июнь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Старт</strong>
+															</h4>
+															<div class="large">
+																<strong>15</strong>
+															</div>
+															<div class="text-muted">Сентябрь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Дедлайн</strong>
+															</h4>
+															<div class="large">
+																<strong>10</strong>
+															</div>
+															<div class="text-muted">Декабрь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</button>
+
+									<button class="btn btn-default btn-md pull-right" data-toggle="collapse" href="#sub-item-1"
+											style="width: 100%; padding: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px; margin-left: 5px;">
+										<div class="col-md-3 col-xs-12">
+											<div style="font-size: 100%; background: #ffffff; min-height: 132px; display: flex; justify-content: center; align-items: center;" align="center">
+												<div>
+													<div style="margin-top: 5px; margin-bottom: 10px; white-space: normal;">
+														<span style="font-size: 80%">Наименование проекта:</span> <strong> Ремонт Лувра</strong>
+														</br>
+													</div>
+													<div style="white-space: normal">
+														<span style="font-size: 80%">Руководитель проекта:</span> <strong> Петров Сигизмунд</strong>
+														</br>
+														<span style="font-size: 80%">Статус:</span> <strong> Реализация</strong>
+														</br>
+														<span style="font-size: 80%">Состояние невыполненных сроков:</span> <strong> 5</strong>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-6 col-xs-12">
+											<div class="row">
+												<div style="font-size: 100%; background: #ffffff; min-height: 132px; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px;" align="center">
+													<div>
+														<div class="progress-labels">
+															<div>
+														<span style="font-size: 90%">
+															<strong>Показатель дедлайна</strong>
+														</span>
+															</div>
+															<div>
+																<span style="font-size: 90%; text-align: right;">30%</span>
+															</div>
+														</div>
+														<div class="progress" style="margin-bottom: 5px;">
+															<div data-percentage="0%" style="width: 30%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</div>
+
+													<div style="margin-top: 10px;">
+														<div class="progress-labels">
+															<div>
+														<span style="font-size: 90%">
+															<strong>Фонансовый показатель</strong>
+														</span>
+															</div>
+															<div>
+																<span style="font-size: 90%">45%</span>
+															</div>
+														</div>
+														<div class="progress" style="margin-bottom: 5px;">
+															<div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-3 col-xs-12">
+											<div class="row">
+												<div style="margin-left: 15px; margin-right: 15px;">
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Создан</strong>
+															</h4>
+															<div class="large">
+																<strong>30</strong>
+															</div>
+															<div class="text-muted">Июнь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Старт</strong>
+															</h4>
+															<div class="large">
+																<strong>15</strong>
+															</div>
+															<div class="text-muted">Сентябрь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+													<div class="col-md-4 date" style="padding-right: 5px;padding-left: 5px;">
+														<div style="background: #ffffff; padding-top: 10px; padding-bottom: 10px;">
+															<h4 style="font-size: 80%">
+																<strong>Дедлайн</strong>
+															</h4>
+															<div class="large">
+																<strong>10</strong>
+															</div>
+															<div class="text-muted">Декабрь</div>
+															<div class="text-muted">2018</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</button>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+	</div>
+
+
+
+
+
+
+{% endblock content %}
+

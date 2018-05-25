@@ -1,0 +1,445 @@
+{% if view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+    <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px;">
+        <div class="col-lg-12" style="padding: 5px; background: #f7f7f7; margin-bottom: 8px; margin-top: 8px;
+        box-shadow: 0 0 1px 1px #00000014;">
+            <span style="color: #30a5ff; font-size: 120%;">Статус проекта</span> - <strong style="font-size: 120%;">Готовность поставки</strong>
+            <button type="button" class="btn-primary" data-toggle="modal" data-target="#create_new_outcom_stat_3" style="margin-left: 10px; font-size: 80%;">
+                Создание статьи расхода
+            </button>
+        </div>
+        <div class="col-lg-12">
+            <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+        </div>
+        <div class="row" style="padding: 5px;">
+            <div class="modal fade" id="create_new_outcom_stat_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="col-lg-offset-3 col-lg-6 modal-dialog" role="document" style="width: 100%">
+                    <div class="modal-content col-lg-6 col-lg-offset-3">
+                        <div class="modal-header">
+                            <form method="POST">{% csrf_token %}
+                                <button type="submit" class="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </form>
+                            <h4 class="modal-title" id="myModalLabel">Создание статьи дохода</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                                <div class="panel-footer" style="border-top: 0px">
+                                    <div class="row" style="font-size: 80%;">
+                                        <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px;">
+                                            <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <h4><strong>Внесите основные данные о статье расхода</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                            </div>
+                                            <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="min-height: 65px; padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <span style="color: #30a5ff;">Внесите сумму для статьи расхода:</span><br>
+                                                    <input type="number" name="inc_for_stat_3">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <span style="color: #30a5ff;">Внесите описание для статьи расхода:</span><br>
+                                                    <textarea name="description_for_stat_3" id="id_description_for_stat_3" style="width: 100%;"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <h4><strong>Запись файла для статьи расхода</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="min-height: 65px; padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <span style="color: #30a5ff;">Выберите файл к статье рхо:</span><br>
+                                                    <div>
+                                                        <input type="file" class="btn btn-primary btn-md" name="files_for_stat_3" style="font-size: 80%; width: 100%; border-radius: 0px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <span style="color: #30a5ff;">Внесите описание к файлу статьи расхода:</span><br>
+                                                    <textarea name="description_for_file_stat_3" style="width: 100%;"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                            </div>
+                                            <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                <div style="padding: 5px; background: #f7f7f7; margin-bottom: 5px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                    <button class="btn-primary" type="submit" id="btn-chat" value="send_file_for_project">
+                                                        Сохранить
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="white-space: normal; text-align: center">
+            <span style="font-size: 80%">
+                <div>
+                    <div class="col-lg-12" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
+                        <div class="col-lg-12" style="padding-top:5px; background: #f7f7f7; margin-bottom: 8px;
+                        padding-right: 0px; padding-left: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                            <div class="col-lg-1" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Дата создания<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Кто создал<br>
+                                    статью расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-2" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Описание<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-3" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Сумма, грн.<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-2" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Файлы<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Дата изменения<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Кто вносил изменения<br>
+                                    в статью расхода
+                                </strong>
+                            </div>
+                            <div class="col-lg-1" style="padding: 0px; min-height: 35px">
+                                <strong style="font-size: 100%">
+                                    Удаление<br>
+                                    статьи расхода
+                                </strong>
+                            </div>
+                        </div>
+                        {% for data_outcom in list_for_outcom_status_3 %}
+                            <div class="col-lg-12" style="padding-top:5px; background: #f7f7f7;
+                            margin-bottom: 8px; padding-right: 0px; padding-left: 0px;
+                            box-shadow: 0 0 1px 1px #00000014;">
+                                <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                    display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                    <strong>
+                                        {{ data_outcom.date_create }}
+                                    </strong>
+                                </div>
+                                <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                    display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                    <strong>
+                                        {{ data_outcom.who_create.surname }} {{ data_outcom.who_create.name }}<br>
+                                        {{ data_outcom.who_create.last_name }}
+                                    </strong>
+                                </div>
+                                <form method="POST">{% csrf_token %}
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                        display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                        <textarea style="width: 80%;" name="description_stat_3_{{ data_outcom.id }}">{{ data_outcom.description }}</textarea>
+                                    </div>
+
+                                    <div class="col-lg-2" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                        display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                        <input type="number" name="outcom_sim_stat_3_{{ data_outcom.id }}" value="{{ data_outcom.outcom_sim }}">
+                                    </div>
+
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                        display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                        <button class="btn-success" type="submit">
+                                            Сохранить<br>
+                                            изменения
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="col-lg-2" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                    display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                    <div class="btn-group" style="width: 100%">
+                                        <button class="btn-primary dropdown-toggle btn-block" style="width: 100%;" type="button" data-toggle="dropdown">
+                                            Вложенные файлы
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" style="width: 100%; padding: 0px;">
+                                            <li>
+                                                <div style="text-align: center; font-size: 100%;">
+                                                    <div style="padding-left: 8px; padding-right: 8px; background-color: #f7f7f7; margin: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                        <div class="col-md-12" style="margin: 0px; padding: 5px">
+                                                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                                                <button type="button" class="btn-primary"
+                                                                        data-toggle="modal" data-target="#create_new_file_for_outcom_stat_3_{{ data_outcom.id }}"
+                                                                        style="width: 100%; margin-bottom: 3px; font-size: 80%; box-shadow: 0 0 1px 1px #ababab; padding: 3px;">
+                                                                    Добавить файл
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        <div style="width: 100%; text-align: center;">
+                                                            <span style="color: #30a5ff; font-size: 80%; width: 100%;">
+                                                                <strong>Прикрепленные файлы:</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 10px; margin-right: 10px;">
+                                                    {% for file in data_outcom.list_all_files %}
+                                                        <div style="padding-left: 8px; padding-right: 8px; background-color: #f7f7f7; margin: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                            <div style="margin: 0px; font-size: 80%;">
+                                                                <div class="col-lg-6">
+                                                                    <div style="padding: 5px;">
+                                                                        <span style="white-space: normal;">
+                                                                            <span style="color: #30a5ff;">Наименование<br> файла:<br></span>
+                                                                            {{ file.name_file }}<br>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div style="padding: 5px;">
+                                                                        <span style="white-space: normal;">
+                                                                            <span style="color: #30a5ff;">Дата<br> создания:<br></span>
+                                                                            {{ file.date_create }}<br>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div style="padding: 5px;">
+                                                                        <span style="white-space: normal;">
+                                                                            <span style="color: #30a5ff;">Описание файла:<br></span>
+                                                                            {{ file.description_file }}<br>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12" style="margin-bottom: 15px;">
+                                                                    <div style="padding: 5px;">
+                                                                        <span style="white-space: normal;">
+                                                                            <span style="color: #30a5ff;">Кто прикрепил файл:<br></span>
+                                                                            {{ file.who_create.surname }} {{ file.who_create.name }} {{ file.who_create.last_name }}<br>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                                                <button type="button" class="btn-primary"
+                                                                        data-toggle="modal" data-target="#reload_file_for_outcom_stat_3_{{ file.id }}"
+                                                                        style="width: 100%; margin-bottom: 3px; font-size: 80%; box-shadow: 0 0 1px 1px #ababab; padding: 3px;">
+                                                                    <strong>Изменить</strong>
+                                                                </button>
+                                                            </form>
+                                                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                                                <button type="submit" class="btn-danger"
+                                                                        style="width: 100%; margin-bottom: 3px; font-size: 80%; box-shadow: 0 0 1px 1px #ababab; padding: 3px;"
+                                                                        name="del_file_for_stat_3_{{ file.id}}" value="{{ file.id}}">
+                                                                    <strong>Удалить</strong>
+                                                                </button>
+                                                            </form>
+                                                            <div class="row" style="margin: 0px;">
+                                                                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px; margin-top: 5px;">
+                                                                    <a style="width: 100%" href="{% url 'login' %}media/{{ file.name_file_re }}" target="_blank" download>
+                                                                        <div class="btn-info" style="width: 100%; margin-bottom: 8px; font-size: 80%; box-shadow: 0 0 1px 1px #ababab; padding: 3px;" type="button">
+                                                                            Скачать файл
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% for file in data_outcom.list_all_files %}
+                                    {% for file in data_outcom.list_all_files %}
+                                        <div class="modal fade" id="reload_file_for_outcom_stat_3_{{ file.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                                <div class="col-lg-offset-3 col-lg-6 modal-dialog" role="document" style="width: 100%">
+                                                    <div class="modal-content col-lg-6 col-lg-offset-3">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">Изменение существующего прикрепленного к статье дохода файла</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="panel-footer" style="border-top: 0px;">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px;">
+                                                                        <div class="col-lg-6" style="padding: 10px;">
+                                                                            <div style="padding: 5px; background: #f7f7f7; margin-bottom: 8px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <span style="color: #30a5ff;">Прикрепленный файл к статье дохода:</span><br>
+                                                                                {{ file.name_file }}
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6" style="padding: 10px;">
+                                                                            <div style="padding: 5px; background: #f7f7f7; margin-bottom: 8px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <span style="color: #30a5ff;">Описание файла к статье дохода:</span><br>
+                                                                                {{ file.description_file }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px;">
+                                                                        <div class="col-lg-12" style="padding-left: 10px; padding-right: 10px;">
+                                                                            <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <h4><strong>Внесите необходимые изменения</strong></h4>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-12">
+                                                                            <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                                                        </div>
+
+                                                                        <div class="col-lg-6" style="padding-left: 10px; padding-right: 10px; padding-bottom: 0px;">
+                                                                            <div style="min-height: 65px; padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <span style="color: #30a5ff;">Выберите новый файл:</span><br>
+                                                                                <div style="font-size: 80%;">
+                                                                                    <input style="border-radius: 0px; font-size: 100%; width: 100%; text-align: center;" type="file" class="btn btn-primary btn-md" name="reload_files_for_stat_3_{{ file.id }}">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-6" style="padding-left: 10px; padding-right: 10px; padding-bottom: 0px;">
+                                                                            <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <span style="color: #30a5ff;">Внесите новое описание к статье дохода:</span><br>
+                                                                                <textarea name="reload_description_for_file_stat_3_{{ file.id }}" style="width: 100%;">{{ file.description_file }}</textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                                                        </div>
+                                                                        <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                                            <div style="padding: 5px; background: #f7f7f7; margin-bottom: 5px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                                <button class="btn-primary" type="submit" id="btn-chat" value="send_file_for_project" style="margin-bottom: 0px;">
+                                                                                    Сохранить изменения
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                                <div class="modal fade" id="create_new_file_for_outcom_stat_3_{{ data_outcom.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                        <div class="col-lg-offset-3 col-lg-6 modal-dialog" role="document" style="width: 100%">
+                                            <div class="modal-content col-lg-6 col-lg-offset-3">
+                                                <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    <h4 class="modal-title" id="myModalLabel">Добавление файла к статье дохода</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="panel-footer" style="border-top: 0px">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px;">
+                                                                <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                                    <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <h4><strong>Запись файла для статьи дохода</strong></h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                                                </div>
+                                                                <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                                    <div style="min-height: 65px; padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <span style="color: #30a5ff;">Выберите файл к статье дохода:</span><br>
+                                                                        <div>
+                                                                            <input type="file" class="btn btn-primary btn-md" name="files_for_stat_3_add_id_{{ data_outcom.id }}" style="font-size: 80%; width: 100%; border-radius: 0px;">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-lg-6" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                                    <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <span style="color: #30a5ff;">Внесите описание к файлу статьи дохода:</span><br>
+                                                                        <textarea name="description_for_file_stat_3_add" style="width: 100%;"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <hr style="border-top: 2px solid #30a5ff; margin-top: 5px; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+                                                                </div>
+                                                                <div class="col-lg-12" style="padding-right: 10px; padding-left: 10px; padding-bottom: 0px;">
+                                                                    <div style="padding: 5px; background: #f7f7f7; margin-bottom: 5px; margin-top: 0px; box-shadow: 0 0 1px 1px #00000014;">
+                                                                        <button class="btn-primary" type="submit" id="btn-chat" value="send_file_for_project">
+                                                                            Сохранить
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                    display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                    <strong>
+                                        {{ data_outcom.date_update }}
+                                    </strong>
+                                </div>
+                                <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                    display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                    <strong>
+                                        {{ data_outcom.who_update.surname }} {{ data_outcom.who_update.name }}<br>
+                                        {{ data_outcom.who_update.last_name }}
+                                    </strong>
+                                </div>
+                                <form method="POST">{% csrf_token %}
+                                    <div class="col-lg-1" style="padding: 0px; min-height: 45px; margin-top: 0px;
+                                        display: flex; justify-content: center; align-items: center; margin-bottom: 3px;">
+                                        <button class="btn-danger" type="submit"
+                                                name="del_stat_3_{{ data_outcom.id }}"
+                                                value="{{ data_outcom.id }}">
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        {% endfor %}
+
+                        <div class="col-lg-12">
+                            <hr style="border-top: 2px solid #30a5ff; margin-top: 0px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+                        </div>
+
+                        <div class="col-lg-12" style="padding: 5px; background: #f7f7f7; margin-bottom: 8px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                            <h4 class="modal-title" style="font-size: 120%;">
+                                Итоговая сумма дохода по статусу проекта составляет: <strong style="color: red">{{ outcom_summ_status_3 }}</strong> грн.
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+{% endif %}
+
+
+

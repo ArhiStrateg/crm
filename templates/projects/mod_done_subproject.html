@@ -1,0 +1,222 @@
+<div class="modal fade" id="done_subproject_{{ sub.id_subproject }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="col-lg-offset-1 col-lg-12 modal-dialog" role="document" style="width: 100%">
+        <div class="modal-content col-lg-6 col-lg-offset-3">
+            <div class="modal-header" style="text-align: center;">
+                <button type="submit" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Будет произведено изменение статуса подпроекта:</h4>
+
+                <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 5px; padding-bottom: 8px;">
+
+                    <button  class="col-lg-12 btn-default dropdown-toggle" style="padding-left: 0px; padding-right: 0px; margin-top: 8px;" data-toggle="dropdown" aria-expanded="false">
+                        <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                            <div style="white-space: normal">
+                                <span style="font-size: 80%; color: #30a5ff;">Наименование подпроекта:</span>
+                                <strong style="font-size: 80%;"> {{ sub.name_project }}</strong></br>
+                            </div>
+                        </div>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu" style="width: 100%; border-radius: 0px;">
+                        <li style="margin: 10px;">
+                            <p style="text-align: center; font-size: 80%; margin: 0px; padding: 0px;">
+
+                                <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 8px; padding-bottom: 8px;">
+                                    <div class="col-lg-12" style="padding-left: 0px; padding-right: 8px; margin-top: 8px;">
+
+                                        <div class="col-lg-6" style="padding-left: 0px; padding-right: 3px; margin-top: 0px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                <div style="white-space: normal">
+                                                    <span style="font-size: 80%; color: #30a5ff;">Руководитель подпроекта:</span>
+                                                    <span style="font-size: 80%;"> {{ sub.who_boss_project.surname }} {{ sub.who_boss_project.name }} {{ sub.who_boss_project.last_name }}</span></br>
+                                                    <span style="font-size: 80%; color: #30a5ff;">Статус:</span>
+                                                    <span style="font-size: 80%;"> Реализация</span></br>
+                                                    <span style="font-size: 80%; color: #30a5ff;">Кто создал подпроект:</span> <span style="font-size: 80%"> {{ sub.who_create_project.surname }} {{ sub.who_create_project.name }} {{ sub.who_create_project.last_name }}</span>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6" style="padding-left: 3px; padding-right: 0px; margin-top: 0px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 60px; background: #f7f7f7;">
+
+                                                <div style="white-space: normal">
+                                                    <span style="font-size: 80%; color: #30a5ff;">Описание подпроекта:</span></br>
+                                                        <div style="overflow: auto; height: 35px; font-size: 80%;">
+                                                            {{ sub.description_project }}
+                                                        </div>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px; margin-top: 8px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; background: #f7f7f7;">
+                                                <div class="progress-labels">
+                                                    <div>
+                                                        <span style="font-size: 90%">
+                                                            <span style="font-size: 80%; color: #30a5ff;">Показатель дедлайна</span>
+                                                            (
+                                                            <span style="font-size: 80%; text-align: right;">{{ sub.sub_proc_ras }}%</span>
+                                                            )
+                                                        </span>
+                                                    </div>
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                                <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 5px; padding-top: 5px;">
+                                                    <div class="progress" style="margin-bottom: 5px;">
+                                                        <div data-percentage="0%" style="width: {{ sub.sub_proc_ras }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="padding-right: 3px; padding-left: 0px; margin-top: 8px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                <div style="white-space: normal">
+                                                    <span style="font-size: 80%; color: #30a5ff;">Дата создания подпроекта:</span></br>
+                                                    <span style="font-size: 80%"> {{ sub.date_create_project }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="padding-right: 3px; padding-left: 3px; margin-top: 8px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                <div style="white-space: normal">
+                                                    <span style="font-size: 80%; color: #30a5ff;">Дата старта подпроекта:</span></br>
+                                                    <span style="font-size: 80%"> {{ sub.date_start_project }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="padding-right: 0px; padding-left: 3px; margin-top: 8px; margin-b: 8px;">
+                                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                <div style="white-space: normal">
+                                                    <span style="font-size: 80%; color: #30a5ff;">Дата окончания подпроекта:</span></br>
+                                                    <span style="font-size: 80%"> {{ sub.date_deadline_project }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                        <h4 style="font-size: 100%;" class="modal-title" id="myModalLabel">Так же будет произведено изменение следующих подчиненных подпроектов:</h4>
+                    </div>
+                </div>
+
+            <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 0px; padding-bottom: 8px;">
+                {% for sub_low in sub.list_for_del %}
+
+                    <div class="col-lg-12"style="padding-left: {{ sub_low.rass }}px">
+                        <button  class="col-lg-12 btn-default dropdown-toggle" style="padding-left: 0px; padding-right: 0px; margin-top: 8px;" data-toggle="dropdown" aria-expanded="false">
+                            <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                <div style="white-space: normal">
+                                    <span style="font-size: 80%; color: #30a5ff;">Наименование подпроекта:</span>
+                                    <strong style="font-size: 80%;"> {{ sub_low.name_project }}</strong></br>
+                                </div>
+                            </div>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu" style="width: 100%; border-radius: 0px;">
+                            <li style="margin: 10px;">
+                                <p style="text-align: center; font-size: 80%; margin: 0px; padding: 0px;">
+
+                                    <div class="col-lg-12" style="background: #ffffff; box-shadow: 0 0 1px 1px #00000014; margin-top: 8px; padding-bottom: 8px;">
+                                        <div class="col-lg-12" style="padding-left: 0px; padding-right: 8px; margin-top: 8px;">
+
+                                            <div class="col-lg-6" style="padding-left: 0px; padding-right: 3px; margin-top: 0px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%; color: #30a5ff;">Руководитель подпроекта:</span>
+                                                        <span style="font-size: 80%;"> {{ sub_low.who_boss_project.surname }} {{ sub_low.who_boss_project.name }} {{ sub_low.who_boss_project.last_name }}</span></br>
+                                                        <span style="font-size: 80%; color: #30a5ff;">Статус:</span>
+                                                        <span style="font-size: 80%;"> Реализация</span></br>
+                                                        <span style="font-size: 80%; color: #30a5ff;">Кто создал подпроект:</span> <span style="font-size: 80%"> {{ sub_low.who_create_project.surname }} {{ sub_low.who_create_project.name }} {{ sub_low.who_create_project.last_name }}</span>
+                                                        </br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6" style="padding-left: 3px; padding-right: 0px; margin-top: 0px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 60px; background: #f7f7f7;">
+
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%; color: #30a5ff;">Описание подпроекта:</span></br>
+                                                            <div style="overflow: auto; height: 35px; font-size: 80%;">
+                                                                {{ sub_low.description_project }}
+                                                            </div>
+                                                        </br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px; margin-top: 8px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; background: #f7f7f7;">
+                                                    <div class="progress-labels">
+                                                        <div>
+                                                            <span style="font-size: 90%">
+                                                                <span style="font-size: 80%; color: #30a5ff;">Показатель дедлайна</span>
+                                                                (
+                                                                <span style="font-size: 80%; text-align: right;">{{ sub_low.sub_proc_ras }}%</span>
+                                                                )
+                                                            </span>
+                                                        </div>
+                                                        <div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 5px; padding-top: 5px;">
+                                                        <div class="progress" style="margin-bottom: 5px;">
+                                                            <div data-percentage="0%" style="width: {{ sub_low.sub_proc_ras }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="padding-right: 3px; padding-left: 0px; margin-top: 8px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%; color: #30a5ff;">Дата создания подпроекта:</span></br>
+                                                        <span style="font-size: 80%"> {{ sub_low.date_create_project }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="padding-right: 3px; padding-left: 3px; margin-top: 8px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 3px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%; color: #30a5ff;">Дата старта подпроекта:</span></br>
+                                                        <span style="font-size: 80%"> {{ sub_low.date_start_project }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="padding-right: 0px; padding-left: 3px; margin-top: 8px; margin-b: 8px;">
+                                                <div style="box-shadow: 0 0 1px 1px #00000014; padding: 0px; margin-right: 0px; text-align: center; font-size: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #f7f7f7;">
+                                                    <div style="white-space: normal">
+                                                        <span style="font-size: 80%; color: #30a5ff;">Дата окончания подпроекта:</span></br>
+                                                        <span style="font-size: 80%"> {{ sub_low.date_deadline_project }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
+                <form method="POST">{% csrf_token %}
+                    <div class="col-lg-12" style="padding: 0px;">
+                        <div style="padding: 5px; background: #f7f7f7; margin-bottom: 0px; margin-top: 8px; box-shadow: 0 0 1px 1px #00000014;">
+                            <button style="width: 100%; font-size: 80%" class="btn-success" name="done_subproject" value="{{ sub.id_subproject }}">Подпроект выполнен</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>

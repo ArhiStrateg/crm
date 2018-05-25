@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Страница проекта
+{% endblock title %}
+
+{% block content %}
+
+<div class="col-lg-offset-0 col-lg-12">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Проекты</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12" style="text-align: center; margin-bottom: 10px; background: #ffffff">
+            <span style="font-size: 150%">
+                <strong>Основная информация о доходах в ведущем проекте</strong><br>
+            </span>
+            <span style="font-size: 120%">
+                Наименование проекта:
+                <strong>{{ prime.prime_project.name_project }}</strong>
+            </span>
+
+            {% if view_for == "1" or view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                {% include 'projects/fin_in_stat_1.html' %}
+            {% endif %}
+
+            {% if view_for == "2" or view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                {% include 'projects/fin_in_stat_2.html' %}
+            {% endif %}
+
+            {% if view_for == "3" or view_for == "4" or view_for == "5" or view_for == "6" %}
+                {% include 'projects/fin_in_stat_3.html' %}
+            {% endif %}
+
+            {% if view_for == "4" or view_for == "5" or view_for == "6" %}
+                {% include 'projects/fin_in_stat_4.html' %}
+            {% endif %}
+
+            {% if view_for == "5" or view_for == "6" %}
+                {% include 'projects/fin_in_stat_5.html' %}
+            {% endif %}
+
+            {% if view_for == "6" %}
+                {% include 'projects/fin_in_stat_6.html' %}
+            {% endif %}
+
+            <h4 class="modal-title" id="myModalLabel">
+                Сумма дохода по всем статусам проекта - <strong style="color: red">{{ sum_incom }}</strong> грн.
+            </h4>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+        $('.btn-group').on('click', '.dropdown-menu > li > div  > div  > div > div > div ', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    </script>
+
+{% endblock scripts %}
+

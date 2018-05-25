@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Создание проекта
+{% endblock title %}
+
+{% block content %}
+
+<script>
+    $(function() {
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1900:2012",
+            // You can put more options here.
+        });
+    });
+</script>
+
+
+    <form method="post">{% csrf_token %}
+
+        {{ form_new_project.as_p }}
+
+        <button href="#" class="btn btn-primary" type="submit">Отправить</button>
+
+    </form>
+
+
+
+
+{% endblock content %}
+

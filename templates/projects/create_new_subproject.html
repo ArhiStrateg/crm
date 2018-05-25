@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Создание проекта
+{% endblock title %}
+
+{% block content %}
+
+
+   <form method="post">{% csrf_token %}
+
+        {{ form_new_subproject.as_p }}
+
+        <button href="#" class="btn btn-primary" type="submit">Отправить</button>
+
+    </form>
+
+
+{% endblock content %}
+
